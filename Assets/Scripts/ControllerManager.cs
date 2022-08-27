@@ -24,7 +24,7 @@ public class ControllerManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         //assign a controller to a player based on any input from that controller
         foreach (var controller in _controllers)
@@ -43,7 +43,7 @@ public class ControllerManager : MonoBehaviour
         //set IsAssigned for this controller to true
         controller.IsAssigned = true;
         
-        Debug.Log("assigned controller " + controller.gameObject.name);
+        //Debug.Log("assigned controller " + controller.gameObject.name);
         
         //find the player manager and add the player to the game with this controller
         FindObjectOfType<PlayerManager>().AddPlayerToGame(controller); 

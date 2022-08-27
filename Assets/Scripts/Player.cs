@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //we can set the player number in the editor
-    [SerializeField] int playerNumber;
+    [SerializeField] int _playerNumber;
 
     Controller _controller;
     UIPlayerText _uiPLayerText;
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public bool HasController { get { return _controller != null; } }
 
     //this property will return the private player number. nothing will be able to set this value outside of this class
-    public int PlayerNumber { get { return playerNumber; } }
+    public int PlayerNumber { get { return _playerNumber; } }
 
     void Awake()
     {
@@ -27,9 +27,11 @@ public class Player : MonoBehaviour
     {
         //this sets the field _controller to the value of the controller passed into this method as a parameter
         this._controller = controller; 
+         
+        
         
         //set the name of the player using a string format method
-        gameObject.name = string.Format("Player {0} - {1}", playerNumber, controller.gameObject.name);
+        gameObject.name = string.Format("Player {0} - {1}", _playerNumber, controller.gameObject.name);
 
         //this will set the text in the UI
         _uiPLayerText.HandlePlayerInitialized(); 

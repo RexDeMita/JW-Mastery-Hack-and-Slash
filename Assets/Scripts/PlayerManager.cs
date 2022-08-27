@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
 { 
     Player[] _players;
 
-    private void Awake()
+    void Awake()
     {
         //array of players
         _players = FindObjectsOfType<Player>(); 
